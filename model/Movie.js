@@ -1,35 +1,35 @@
-const {Sequelize,DataTypes}=require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
-const sequelize=new Sequelize('postgres','postgres','Akash',{
+const sequelize = new Sequelize('postgres', 'postgres', 'Akash', {
     host: 'localhost',
     dialect: 'postgres'
 });
 
-const Movie=sequelize.define('Movie',{
-    movieId:{
-        type:DataTypes.STRING,
-        allowNull:false,
+const Movie = sequelize.define('Movie', {
+    movieId: {
+        type: DataTypes.STRING,
+        allowNull: false,
         primaryKey: true
     },
-    title:{
-        type:DataTypes.STRING,
-        allowNull:false
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
-    year:{
-        type:DataTypes.INTEGER,
+    year: {
+        type: DataTypes.INTEGER,
     },
-    length:{
-        type:DataTypes.STRING,
+    length: {
+        type: DataTypes.STRING,
     },
-    actor:{
-        type:DataTypes.STRING,
+    actor: {
+        type: DataTypes.STRING,
     }
-},{
-    tableName:"movies",
-    underscored:true,
-    timestamps:false
+}, {
+    tableName: "movies",
+    underscored: true,
+    timestamps: false
 });
 
-console.log(Movie===sequelize.models.Movie)
+console.log(Movie === sequelize.models.Movie)
 
 module.exports = Movie;

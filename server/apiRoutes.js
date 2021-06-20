@@ -1,9 +1,9 @@
-const express=require('express');
+const express = require('express');
 
-const movieRoutes=require('./movies/movieRoutes');
+const movieRoutes = require('./movies/movieRoutes');
 
-const apiRouter=express.Router();
+const apiRouter = express.Router();
 
 module.exports = () =>
     apiRouter
-    .use('/movie',movieRoutes());
+        .use('/movie', movieRoutes());

@@ -1,9 +1,9 @@
-const Router=require('express-promise-router');
+const Router = require('express-promise-router');
 
-const controller=require('./moviesController');
+const controller = require('./moviesController');
 
-module.exports=()=>{
-    const router=Router({MergeParams: true});
+module.exports = () => {
+    const router = Router({ MergeParams: true });
     router.route('/create').post(controller.createNewMovie);
     router.route('/list').get(controller.listMovies);
     router.route('/searchMovie/:title').get(controller.searchMovieTitle);
